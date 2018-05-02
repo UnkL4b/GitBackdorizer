@@ -50,7 +50,7 @@ class GitBackdorizer(object):
 1. Generate Backdoor
 2. Listening
 
-[Exit]
+[exit]
 
 """.format(**formatters)
 
