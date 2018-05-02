@@ -1,3 +1,5 @@
+from colorama import Fore
+from colorama import Style
 from prompt_toolkit import prompt
 from prompt_toolkit.contrib.completers import WordCompleter
 
@@ -5,58 +7,67 @@ from prompt_toolkit.contrib.completers import WordCompleter
 class GitBackdorizer(object):
 
     def __init__(self):
+        formatters = {             
+            'RED': '\033[91m',     
+            'GREEN': '\033[92m',   
+            'END': '\033[0m',      
+         }
         self.desc_init = """
+              
 
-                              . .  ,  , 
-                              |` \/ \/ \,', 
-                              ;          ` \/\,. 
-                             :               ` \,/ 
-                             |                  / 
-                             ;                 : 
-                            :                  ; 
-                            |      ,---.      / 
-                           :     ,'     `,-._ \ 
-                           ;    (   o    \   `' 
-                         _:      .      ,'  o ; 
-                        /,.`      `.__,'`-.__, 
-                        \_  _               \ 
-                       ,'  / `,          `.,' 
-                 ___,'`-._ \_/ `,._        ; 
-              __;_,'      `-.`-'./ `--.____) 
-           ,-'           _,--\^-' 
-         ,:_____      ,-'     \ 
-        (,'     `--.  \;-._    ;              Git Backdorizer v1.0 
-        :    Y      `-/    `,  :     "Tool based in about linux native backdoors"
-        :    :       :     /_;'       By Ulisses Castro - @usscastro
-        :    :       |    :            
-         \    \      :    : 
-          `-._ `-.__, \    `. 
-             \   \  `. \     `. 
-           ,-;    \---)_\ ,','/ 
-           \_ `---'--'" ,'^-;' 
-           (_`     ---'" ,-') 
-           / `--.__,. ,-'    \ 
-           )-.__,-- ||___,--' `-. 
-          /._______,|__________,'\ 
-          `--.____,'|_________,-' 
+    ▬▬ι{RED}════════{END}  Git Backdorizer {RED}════════{END}ι▬▬
+
+                       .-.
+                      |_:_|
+                     /(_Y_)\\
+{RED}.{END}                   ( \/M\/ )
+{RED} '.{END}               _.'-/'-'\-'._
+{RED}   ':{END}          _/.--'[[[[]'--.\_
+{RED}     ':{END}        /_'  : |::"| :  '.\\
+{RED}       ':{END}     //   ./ |oUU| \.'  :\\
+{RED}         ':{END}  _:'..' \_|___|_/ :   :|
+{RED}           ':.{END}  .'  |_[___]_|  :.':\\
+            [::\ |  :  | |  :   ; : \\
+             '-'   \/'.| |.' \  .;.' |
+             |\_    \  '-'   :       |
+             |  \    \ .:    :   |   |
+             |   \    | '.   :    \  |
+             /       \   :. .;       |
+            /     |   |  :__/     :  \\\\
+           |  |   |    \:   | \   |   ||
+          /    \  : :  |:   /  |__|   /|
+          |     : : :_/_|  /'._\  '--|_\\
+          /___.-/_|-'   \  \\
+                         '-'
+
+     "Tool based in about linux native backdoors"
+                      Ulisses Castro - @usscastro
+ 
 
 
 ~> MENU
 
-[1]
+1. Generate Backdoor
+2. Listening
 
-"""
+[Exit]
+
+""".format(**formatters)
+
+
+    def menu(self):
+        while 1:
+            user_input = prompt(':> ')
+            if 'exit' == user_input:
+                exit()
+            else:
+                print(user_input)
+
 
     def start(self):
         try:
             print(self.desc_init)
-            while 1:
-                html_completer = WordCompleter(['<html>', '<body>', '<head>', '<title>'])
-                user_input = prompt(':> ', completer=html_completer)
-                if 'exit' == user_input:
-                    exit()
-                else:
-                    print(user_input)
+            self.menu()
         
         except KeyboardInterrupt:
             exit() 
