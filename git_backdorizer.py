@@ -123,7 +123,7 @@ class GitBackdorizer(object):
             else:
                 noob_choice += 1
                 if noob_choice == 3:
-                    print("You're dumb? \nI'll show you again what you have to do:\n")
+                    print("Are you dumb?? \nI'll show you again what you have to do:\n")
                 print("Choose one option\n1 - Generate backdoor\n2 - Listening passwords\nexit - to quit")
 
 
