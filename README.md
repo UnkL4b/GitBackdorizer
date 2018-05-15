@@ -2,6 +2,11 @@
 GitBackdorizer is a proof of concept, fully inspired in Ulisses Castro's [50 ton of backdoors](https://www.slideshare.net/ulissescastro/50-ton-of-backdoors) talk, that abuses the lack of user attention to steal git access credentials.
 
 ## How it Works
+GitBackdorizer consists of three pieces: handler, dropper and the payload.
+
+#### Handler
+The handler sets up a HTTP server to capture the credentials and offers a menu to configure the dropper's payload. The dropper delivery is responsability of the attacker.
+
 #### Dropper
 The dropper is designed to have the highest possible compatibility, avoiding any non-sh specific feature. It works by:
 - Identify if the backdorized git hook is the pre-push hook or any other
