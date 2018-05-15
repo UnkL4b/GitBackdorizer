@@ -1,9 +1,8 @@
 # GitBackdorizer (BETA)
 
 ## DESCRIPTION
-```
 GitBackdorizer (bad name, I know!) Is a proof of concept from Ulisses Castro's talk - 50 ton of backdoors (https://www.slideshare.net/ulissescastro/50-ton-of-backdoors) that uses the lack of user attention to steal git access credentials.
-```
+
 
 ## GREETZ
 - Ulisses Castro - 50 ton of backdoors (https://www.slideshare.net/ulissescastro/50-ton-of-backdoors)
